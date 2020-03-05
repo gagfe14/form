@@ -1,186 +1,101 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8"> 
-      <meta name="description" content="Tarea de Recomendaciones"> 
-     
-      <link rel="stylesheet" href="estilos.css">
-    <title>Mi pagina de Recomendaciones</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.9.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.9.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.9.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.9.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.9.1/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-
-    
-  </head>
-  <body>
-    <header id="cabeceralogo"> 
-      <div> 
-      <center>
-        <h1>RECOMENDACIONES...</h1> 
-        </center>
-      </div> 
-    </header> 
-    <center>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-    </center>
-     <main> 
-      <div> 
-        <section id="articulosprincipales"> 
-          <script>
-              let k=0;
-
-            setInterval(graftre, 150);
-            function graftre(){
-                let t=20* Math.sin(k)+40;
-                let r=30* Math.cos(k)+60;
-                figura4.style.left=`${t}px`;
-                figura4.style.top=`${r}px`;
-                k+=0.2;
-                }
-
-            </script> 
-          
-        <br>
-  <div class="alinear">
-      <form action="javascript:;">
+<html lang="es">
+<body>
+<head>
+<body id="cuerpo">
+	<title> Recomendaciones </title>
+	<meta charset="utf-8">
+	<meta name="description" content="Este es un documento HTML5">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<link rel="stylesheet" href="misestilos.css">
+	</head>
+	<header id="cabeceralogo">
+		<div>
+			
+			<h1>FERNANDO GARCÍA GARCÍA</h1>
+		</div>
+	</header>
+<nav id="menuprincipal">
+	<div>
+		
+	</div>
+</nav>
+<form action="javascript:;">
           <center>
           
           </center>
         <center>
-          <table border="5">
+          <table border="1">
             
               <tr>
-                  <th colspan="2">Genero Musical</th>
+                  <th colspan="2">Tipo de bebida</th>
               </tr>
               <tr>
-                  <td>Ingresa el genero: 
-                          <select name="lol" id="music">
+                  <td>Ingresa el tipo de bebida:
+                          <select name="bebidas" id="bebidas">
                               <!-- Opciones de la lista -->
-                              <option value="1"></option>
-                              <option value="2">Pop</option>
-                              <option value="3">Regueton</option>
-                              <option value="4">Rock</option>
-                              <option value="5">Indie</option>
-                              
+                              <option value="1">Cola</option>
+                              <option value="2">Alcohol</option>
+                              <option value="3">Dulce natural</option>
+                              <option value="4">Refrescos de sabor</option>
                             </select>
-                            <td>Ingresa tu edad: <input type="number" name="numero" value="15" min="10"
-                              max="100" 
-                              id="music1">
+                            <td>Ingrese su edad: 
+							<input type="number" name="numero" value="15" min="10"
+                              max="100" id="edad"/>
                               
-                  <td><input type="submit" value="Enviar"></td>
+                  
               </tr>
            
           </table>
+		  <td><input type="submit" value="Enviar">
         </center>
         
       </form>
   </div>
   <script>
+  
     "use strict";
 
-    var resp = document.getElementById("music");
-    var resp1 = document.getElementById("music1");
+    var respuesta = document.getElementById("bebidas");
+    var respuesta1 = document.getElementById("edad");
 
-    document.addEventListener("submit", recomendaciones);
+    document.addEventListener("submit", recomendar);
 
-    function recomendaciones() {
-        var cantante = resp.value;
-        var edad = resp1.value;
+    function recomendar() {
+        var trago = respuesta.value;
+        var edad = respuesta1.value;
 
-        if (cantante == "2" && edad >= 15 && edad < 70) {
-            alert("Camila Cabello,Charlie Puth, Billie Elish,Shawn Mendes Te pueden Gustar! :D");
+        if (trago == "1" && edad >= 5 && edad < 60) {
+            alert("Te recomiendo Coca cola o Red cola");
+        } 
+		
+		else if (trago == "2"){
+			if(edad >= 18){
+				alert("Te recomiendo cerveza, vodka, tequila, ron, whisky, pulque");
+			}
+			else{
+				alert("No te puedo recomendar este tipo por ser menor de edad");
+			}
+        } 
+		
+		else if (trago == "3" && edad >= 6 && edad < 70) {
+            alert("Te recomiendo agua de horchata, avena, tamarindo, melón o limón");
+			
+        } 
+		else if (trago == "4" && edad >= 6 && edad < 70) {
+            alert("Te recomiendo Fanta, squirt, sidral mundet");
 
-
-        } else if (cantante == "3" && edad >= 15 && edad < 70) {
-            alert("Ozuna,Daddy Yankie,Anuel, Bad Bunny Te pueden gustar! :D");
-
-         
-
-        } else if (cantante == "4" && edad >= 15 && edad < 70) {
-            alert("Nirvana,Queen,Pink Floyd,Metallica Te pueden Gustar! :D");
-
-        
-
-        } else if (cantante == "5" && edad >= 15 && edad < 70) {
-            alert("Pixies,Artick Monkies,Foals,Interpool,Te pueden Gustar! :D");
-
-         
-
-       } else if (cantante=="2" && edad>=70){
-            alert("!Que loco");
-
-          } else if (cantante=="3" && edad>=70){
-            alert("Que loco!");
-
-          } else if (cantante=="4" && edad>=70){
-            alert("!Que loco!");
-
-          } else if (cantante=="5" && edad>=70){
-            alert("!Que loco");
-
-          } else {
-            alert("Selecciona  bien el genero");
-
-        }
-
-
+       }
 
     }
 </script>
           </section>
     
   </main>
-  <footer id="pielogo"> 
-
-    <div> 
-      <section class="seccionpie"> 
-        <h1>Sitio Web</h1> 
-        <p><a href="index.html">5612801178</a></p> 
-        <p><a href="fotos.html">HTML</a></p> 
-        <p><a href="videos.html">CSS</a></p> 
-      </section> 
-      <section class="seccionpie"> 
-        <h1>Ayuda</h1> 
-        <p><a href="contacto.html"></a></p> 
-      </section> 
-      <section class="seccionpie"> 
-        <address>Mexico,Nezahualcoyotl</address> 
-        <address>GONZALEZ PEREZ HUGO ALBERTO IC42</address> 
-        <small>&copy; Derechos Reservados 2019</small> 
-      </section> 
-    </div> 
-  </footer> 
-  </body>
+			<address>FERNANDO GARCÍA GARCÍA, UTN, NEZA</address>
+			<small>&copy; Derechos Reservados 2019</small>
+		</section>
+	</div>
+</footer>
+</body>
 </html>
